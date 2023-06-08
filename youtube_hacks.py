@@ -260,6 +260,7 @@ def store_data_sql(filterdata):
 
             # Fetch the result
             result = cursor.fetchone()
+            st.write(result)
             
             if result:
                 st.write("Channel Data Inserted Already!. Try with another Channel")
