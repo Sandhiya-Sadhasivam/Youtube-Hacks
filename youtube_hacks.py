@@ -224,7 +224,6 @@ def store_data_mongo(alldata):
 def sql_connect():
     sql_host = st.secrets["DB_HOST"]
     sql_user = st.secrets["DB_USER"]
-    st.write(sql_user)
     sql_password = st.secrets["DB_PASS"]
     dbname = st.secrets["DB_NAME"]    
     sql_port = st.secrets["DB_PORT"]
