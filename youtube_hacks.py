@@ -272,7 +272,7 @@ def store_data_sql(filterdata):
                 # Insert Playlist Data
                 data2=[]
                 for i in document['channel']['Playlists']:
-                    st.write(i['playlist_name'])
+                    #st.write(i['playlist_name'])
                     data2.append((i['playlist_id'],document['channel']['Channel_Id'],i['playlist_name']))
                     # Insert video Data
                     data3=[]
