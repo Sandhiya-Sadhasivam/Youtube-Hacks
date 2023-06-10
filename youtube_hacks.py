@@ -9,8 +9,7 @@ from googleapiclient.discovery import build
 
 
 
-def youtube_api_connect():
-    api_key = st.secrets["API_KEY"]
+def youtube_api_connect(api_key):
     youtube = build("youtube", "v3", developerKey=api_key)
     return youtube
 
@@ -155,8 +154,8 @@ def get_comments_data(youtube, video_id):
         return []
 
 
-def get_multiple_channel_data(channel_ids):
-    youtube = youtube_api_connect()
+def get_multiple_channel_data(channel_ids,apikey):
+    youtube = youtube_api_connect(apikey)
     channel_id_list = channel_ids.split(",")
     all_data = []
     datas = []
@@ -401,7 +400,7 @@ def main():
         c_id = st.text_input("Channel ID:")
         
         if c_id and apikey:
-            chdata, alldata = get_multiple_channel_data(c_id)
+            chdata, alldata = get_multiple_channel_data(c_id,apikey)
             st.json(chdata)
             
             if st.button("Store Data"):
